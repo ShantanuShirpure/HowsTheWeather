@@ -6,8 +6,10 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchWeatcher(city) {
   const url = `${ROOT_URL}&q=${city},us`;
+  //axios library just makes a ajax request and returns a promise whice we then
+  //pass on as return payload.
   const request = axios.get(url);
-
+  console.log('Request:', request);
   return{
     type  : FETCH_WEATHER,
     payload : request
